@@ -113,31 +113,37 @@ Screenshots of Disaster Response Volunteer System.
     <img width="268" height="583" alt="image" src="https://github.com/user-attachments/assets/8b09ec2d-6b7d-4327-8310-b73aa31194ae" />
 
 2.	Sign Up Page
-   
+   <img width="273" height="584" alt="image" src="https://github.com/user-attachments/assets/46ba5488-4437-4493-853a-0cca68661442" />
+
 
 3.	Sign In page
-   
+   <img width="263" height="574" alt="image" src="https://github.com/user-attachments/assets/e9505e68-9ff4-4c94-94d7-a8ba5a1486a7" />
+
 
 4.	Main Page
-   
+   <img width="307" height="638" alt="image" src="https://github.com/user-attachments/assets/78fc3293-6783-419f-af0b-3ef2cf50350d" />
+
 
 5.	Accept Mission Page
-  
+  <img width="296" height="630" alt="image" src="https://github.com/user-attachments/assets/6961f0c5-9415-467c-bb11-0ff5543f5f96" />
+  <img width="323" height="668" alt="image" src="https://github.com/user-attachments/assets/54d68a07-42cb-4f51-a7a5-e8c290d04b4d" />
 
-   
 6.	Create Emergency Page
-    
+    <img width="310" height="646" alt="image" src="https://github.com/user-attachments/assets/c9642702-f4fc-4923-b379-97f4dd6d536d" />
+
 7.	Incident Report Page
-     
+     <img width="301" height="619" alt="image" src="https://github.com/user-attachments/assets/9910a4e6-c906-4dee-93e0-91510c450ffd" />
+
 
 8.	Profile Page 
-   
-9.	Accepted Mission Page 
-  
+   <img width="314" height="644" alt="image" src="https://github.com/user-attachments/assets/6bae7500-e241-4810-92cd-f06af6174810" />
 
+9.	Accepted Mission Page 
+  <img width="317" height="621" alt="image" src="https://github.com/user-attachments/assets/ee76a015-2d97-4dc0-b4d1-3f282aa4ee66" />
     
 10.	My Updates Page
-  
+  <img width="385" height="812" alt="image" src="https://github.com/user-attachments/assets/b8497353-2daf-4539-a468-4c32780b4a7a" />
+
 
 
 
