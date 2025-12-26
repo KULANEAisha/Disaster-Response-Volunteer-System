@@ -106,3 +106,38 @@ Run on an Android emulator or physical device
 
 Aisha A. Kulane
 BSc Software Engineering – USIU-Africa
+
+## Appendices
+Screenshots of Disaster Response Volunteer System.
+1.	Welcome Page
+    <img width="268" height="583" alt="image" src="https://github.com/user-attachments/assets/8b09ec2d-6b7d-4327-8310-b73aa31194ae" />
+
+2.	Sign Up Page
+   
+
+3.	Sign In page
+   
+
+4.	Main Page
+   
+
+5.	Accept Mission Page
+  
+
+   
+6.	Create Emergency Page
+    
+7.	Incident Report Page
+     
+
+8.	Profile Page 
+   
+9.	Accepted Mission Page 
+  
+
+    
+10.	My Updates Page
+  
+
+
+
