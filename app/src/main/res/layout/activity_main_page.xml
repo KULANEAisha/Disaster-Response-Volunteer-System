@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <!-- Header Section -->
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/header_background">
+
+        <!-- Status Bar Spacer -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="48dp" />
+
+        <!-- Header Content -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="32dp">
+
+            <TextView
+                android:id="@+id/headerTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Emergency Response"
+                style="@style/HeaderTitle" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Connecting Volunteers to those in need"
+                style="@style/HeaderSubtitle"
+                android:layout_marginTop="6dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/nav_item_color"
+        app:itemTextColor="@color/nav_item_color"
+        app:labelVisibilityMode="labeled"
+        android:elevation="8dp" />
+
+    <!-- Scrollable Content Area -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/headerLayout"
+        android:layout_above="@id/bottomNavigationView"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Stats Cards -->
+            <LinearLayout
+                android:id="@+id/statsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal">
+
+                <!-- Active Alerts Card -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="#E0E7FF">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="20dp"
+                        android:gravity="center_vertical">
+
+                        <!-- Icon -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            app:cardCornerRadius="24dp"
+                            app:cardElevation="0dp"
+                            app:cardBackgroundColor="#4338ca">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_emergency"
+                                app:tint="#FFFFFF"/>
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Text -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="12dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/activeAlertsCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="12"
+                                android:textSize="32sp"
+                                android:textStyle="bold"
+                                android:textColor="#1f2937"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Active Alerts"
+                                android:textSize="14sp"
+                                android:textColor="#6b7280"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Volunteers Active Card -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="#FFE4E6">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="20dp"
+                        android:gravity="center_vertical">
+
+                        <!-- Icon -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            app:cardCornerRadius="24dp"
+                            app:cardElevation="0dp"
+                            app:cardBackgroundColor="#ef4444">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_volunteers"
+                                app:tint="#FFFFFF"/>
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Text -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="12dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/volunteersActiveCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="156"
+                                android:textSize="32sp"
+                                android:textStyle="bold"
+                                android:textColor="#1f2937"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Volunteers Active"
+                                android:textSize="14sp"
+                                android:textColor="#6b7280"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <!-- Matched Emergencies Card - NEW IMPROVED DESIGN -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/matchedEmergenciesCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#FEF3C7">
+
+                <LinearLayout
+                    android:id="@+id/viewMatchedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="20dp"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+
+                    <!-- Icon Circle -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        app:cardCornerRadius="28dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="#F59E0B">
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="center"
+                            android:src="@android:drawable/ic_menu_view"
+                            app:tint="#FFFFFF"/>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Text Content -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Personalized Matches"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="#92400E"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="View emergencies matched to your skills"
+                            android:textSize="13sp"
+                            android:textColor="#78350F"/>
+                    </LinearLayout>
+
+                    <!-- Arrow Icon -->
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@android:drawable/ic_menu_more"
+                        app:tint="#92400E"
+                        android:rotation="270"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Search Bar -->
+            <LinearLayout
+                android:id="@+id/searchLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <EditText
+                    android:id="@+id/searchEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/search_background"
+                    android:hint="Search requests..."
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:drawableStart="@android:drawable/ic_menu_search"
+                    android:drawablePadding="8dp"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/filterButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="8dp"
+                    android:text="Filters"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/filter_button_background"
+                    android:drawableStart="@android:drawable/ic_menu_sort_by_size"
+                    android:drawablePadding="4dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp" />
+            </LinearLayout>
+
+            <!-- Emergency Requests Title with bell icon -->
+            <LinearLayout
+                android:id="@+id/emergencyRequestsHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_emergency"
+                    app:tint="#4338ca"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Emergency Requests"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#1f2937" />
+            </LinearLayout>
+
+            <!-- RecyclerView for Emergency Cards -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp"
+                android:nestedScrollingEnabled="false"
+                android:clipToPadding="false" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

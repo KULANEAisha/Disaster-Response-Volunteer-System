@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Signup"
+    android:fillViewport="true"
+    android:background="#F5F5F5">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardElevation="6dp"
+        app:cardCornerRadius="20dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Join Our Response Network"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="#1e40af"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Full Name -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:boxBackgroundMode="outline">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fullNameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Full Name *"
+                    android:inputType="textPersonName" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Email -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:boxBackgroundMode="outline">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email *"
+                    android:inputType="textEmailAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Password -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:boxBackgroundMode="outline"
+                app:endIconMode="password_toggle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passwordEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Password *"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Service Area -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:boxBackgroundMode="outline">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/serviceAreaEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Service Area *"
+                    android:inputType="textCapWords" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <!-- Response Radius Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Response Radius (km)"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/radiusValueTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="8 km"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#1e40af"
+                android:layout_marginBottom="8dp" />
+
+            <SeekBar
+                android:id="@+id/radiusSeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="50"
+                android:progress="8"
+                android:progressTint="#1e40af"
+                android:thumbTint="#1e40af"
+                android:layout_marginBottom="32dp" />
+
+            <!-- Skills & Expertise Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Skills &amp; Expertise *"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Skills Grid -->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:layout_marginBottom="32dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/skillMedical"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    android:text="Medical" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/skillSearchRescue"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    android:text="Search &amp; Rescue" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/skillFoodDistribution"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    android:text="Food Distribution" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/skillShelterManagement"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    android:text="Shelter Management" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/skillTransportation"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    android:text="Transportation" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/skillCommunication"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    android:text="Communication" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/skillTechnicalSupport"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    android:text="Technical Support"
+                    android:layout_columnSpan="2" />
+
+            </GridLayout>
+
+            <!-- Availability Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Availability *"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Availability Grid -->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:layout_marginBottom="32dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/availWeekdayMornings"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    android:text="Weekday Mornings" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/availWeekdayAfternoons"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    android:text="Weekday Afternoons" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/availWeekdayEvenings"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    android:text="Weekday Evenings" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/availWeekendDays"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    android:text="Weekend Days" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/availWeekendEvenings"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    android:text="Weekend Evenings" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/availOvernight"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    android:text="Overnight" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/availOnCall"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    android:text="On-call"
+                    android:layout_columnSpan="2" />
+
+            </GridLayout>
+            <!-- Complete Registration Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/completeRegistrationButton"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="Complete Registration"
+                android:textSize="16sp"
+                android:textColor="@android:color/white"
+                android:backgroundTint="#1e40af"
+                app:cornerRadius="16dp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Already have an account -->
+            <TextView
+                android:id="@+id/loginTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Already have an account? Login"
+                android:textColor="#1e40af"
+                android:textSize="14sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</ScrollView>
+
+

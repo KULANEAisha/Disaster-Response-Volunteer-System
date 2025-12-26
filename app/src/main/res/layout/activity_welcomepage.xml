@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Welcomepage"
+    android:background="@drawable/background_gradient"
+    android:padding="24dp">
+
+    <!-- Icon (on top) -->
+    <ImageView
+        android:id="@+id/ivIcon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@android:drawable/ic_dialog_alert"
+        app:tint="@android:color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp" />
+
+    <!-- App Title -->
+
+    <!-- Tagline -->
+
+    <!-- Buttons Row -->
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivIcon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:text="Disaster Response Network"
+        android:textColor="@android:color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/tvTagline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTitle"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Connecting volunteers with communities in need during emergencies"
+        android:textColor="@android:color/white"
+        android:textSize="19sp" />
+
+    <!-- Buttons Column -->
+    <!-- Buttons Column -->
+    <LinearLayout
+        android:id="@+id/buttonColumn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTagline"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLoginIn"
+            android:layout_width="220dp"
+            android:layout_height="61dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/button_blue"
+            android:text="Join As Volunteer"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="@null" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSignIn"
+            android:layout_width="220dp"
+            android:layout_height="61dp"
+            android:background="@drawable/button_submit"
+            app:backgroundTint="#DC2626"
+            android:textSize="20sp"
+            android:text="Sign In"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+
+</RelativeLayout>
+
+
+
+
+
+

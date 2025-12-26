@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/main"
+    tools:context=".MatchedEmergenciesActivity"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F7">
+
+    <!-- Header Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/header_background">
+
+        <!-- Status Bar Spacer -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="24dp" />
+
+        <!-- Header Content -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="24dp"
+            android:paddingBottom="32dp"
+            android:gravity="center_vertical">
+
+            <!-- Back Button -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/backButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#4338ca"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@android:drawable/ic_menu_revert"
+                    app:tint="#FFFFFF"
+                    android:rotation="180" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Title Section -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Matched Emergencies"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Personalized for your skills"
+                    android:textColor="#E0E7FF"
+                    android:textSize="13sp"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Stats Card -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="-20dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="@android:color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="20dp">
+
+            <!-- Match Count -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/matchCountNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:textColor="#1f2937" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Matches Found"
+                    android:textSize="14sp"
+                    android:textColor="#6b7280"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+
+            <!-- Divider -->
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#E5E7EB"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp" />
+
+            <!-- Best Match Score -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="end">
+
+                <TextView
+                    android:id="@+id/bestMatchScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:textColor="#047857" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Best Match"
+                    android:textSize="14sp"
+                    android:textColor="#6b7280"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Best Match Banner (shown when there's a top match) -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bestMatchBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="#ECFDF5"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_check"
+                app:tint="#059669" />
+
+            <TextView
+                android:id="@+id/bestMatchTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="12dp"
+                android:text="Excellent match found!"
+                android:textColor="#065f46"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Section Header -->
+    <LinearLayout
+        android:id="@+id/sectionHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="12dp"
+        android:gravity="center_vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_emergency"
+            app:tint="#4338ca" />
+
+        <TextView
+            android:id="@+id/matchCountTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="Your Matches"
+            android:textColor="#1f2937"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <!-- Sort/Filter button (optional) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sorted by match"
+            android:textColor="#6b7280"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- Content Area -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- Progress Bar -->
+        <LinearLayout
+            android:id="@+id/loadingLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="visible">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:indeterminateTint="#4338ca" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Finding your matches..."
+                android:textColor="#6b7280"
+                android:textSize="14sp"
+                android:layout_marginTop="16dp" />
+        </LinearLayout>
+
+        <!-- Empty State -->
+        <LinearLayout
+            android:id="@+id/emptyStateLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="32dp"
+            android:visibility="gone">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                app:cardCornerRadius="60dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#F3F4F6">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_emergency"
+                    app:tint="#9CA3AF" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No Matches Yet"
+                android:textColor="#1f2937"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="24dp" />
+
+            <TextView
+                android:id="@+id/emptyStateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="We couldn't find any emergencies matching your skills at the moment. Check back later!"
+                android:textColor="#6b7280"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginTop="12dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/refreshButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Refresh"
+                android:textColor="#FFFFFF"
+                app:backgroundTint="#4338ca"
+                app:cornerRadius="12dp"
+                android:paddingStart="32dp"
+                android:paddingEnd="32dp" />
+        </LinearLayout>
+
+        <!-- Emergencies RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/matchedRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="16dp"
+            android:clipToPadding="false"
+            android:visibility="gone" />
+    </FrameLayout>
+</LinearLayout>

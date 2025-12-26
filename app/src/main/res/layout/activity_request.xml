@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F7"
+    tools:context=".Request">
+
+    <!-- Header Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/header_background"
+        android:padding="24dp"
+        android:paddingBottom="32dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Emergency Response"
+            style="@style/HeaderTitle" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Connecting Volunteers to those in need"
+            style="@style/HeaderSubtitle"
+            android:layout_marginTop="6dp" />
+    </LinearLayout>
+
+    <!-- Scrollable Form Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="32dp">
+
+            <!-- Type of Emergency Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Type of Emergency"
+                    style="@style/FormLabelText"
+                    android:layout_marginBottom="10dp" />
+
+                <Spinner
+                    android:id="@+id/emergencyTypeSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:padding="14dp"
+                    android:background="@drawable/spinner_background_selector"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <!-- Location Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Location"
+                    style="@style/FormLabelText"
+                    android:layout_marginBottom="10dp" />
+
+                <EditText
+                    android:id="@+id/locationEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:hint="Enter location"
+                    android:padding="14dp"
+                    android:drawableStart="@drawable/baseline_add_location_24"
+                    android:drawablePadding="12dp"
+                    android:background="@drawable/input_background_selector"
+                    android:textColor="#1A1A1A"
+                    style="@style/FormHintText"
+                    android:inputType="text" />
+            </LinearLayout>
+
+            <!-- Urgency Buttons -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:weightSum="4" android:gravity="center" android:baselineAligned="false"> <androidx.appcompat.widget.AppCompatButton android:id="@+id/lowButton" android:layout_width="0dp" android:layout_height="50dp" android:layout_weight="1" android:text="Low" android:textColor="#333333" android:textSize="13sp" android:textStyle="bold" android:gravity="center" android:minWidth="0dp" android:paddingHorizontal="6dp" android:background="@drawable/button_urgency_unselected" android:layout_marginEnd="5dp" /> <androidx.appcompat.widget.AppCompatButton android:id="@+id/mediumButton" android:layout_width="0dp" android:layout_height="50dp" android:layout_weight="1" android:text="Medium" android:textColor="#333333" android:textSize="13sp" android:textStyle="bold" android:gravity="center" android:minWidth="0dp" android:paddingHorizontal="6dp" android:background="@drawable/button_urgency_unselected" android:layout_marginStart="5dp" android:layout_marginEnd="5dp" /> <androidx.appcompat.widget.AppCompatButton android:id="@+id/highButton" android:layout_width="0dp" android:layout_height="50dp" android:layout_weight="1" android:text="High" android:textColor="#333333" android:textSize="13sp" android:textStyle="bold" android:gravity="center" android:minWidth="0dp" android:paddingHorizontal="6dp" android:background="@drawable/button_urgency_unselected" android:layout_marginStart="5dp" android:layout_marginEnd="5dp" /> <androidx.appcompat.widget.AppCompatButton android:id="@+id/criticalButton" android:layout_width="0dp" android:layout_height="50dp" android:layout_weight="1" android:text="Critical" android:textColor="#333333" android:textSize="13sp" android:textStyle="bold" android:gravity="center" android:minWidth="0dp" android:paddingHorizontal="6dp" android:background="@drawable/button_urgency_unselected" android:layout_marginStart="5dp" /> </LinearLayout>
+
+            <!-- Description Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Description"
+                    style="@style/FormLabelText"
+                    android:layout_marginBottom="10dp" />
+
+                <EditText
+                    android:id="@+id/descriptionEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:hint="Describe the emergency/disaster situation..."
+                    android:padding="14dp"
+                    android:inputType="textMultiLine"
+                    android:gravity="top"
+                    android:background="@drawable/input_background_selector"
+                    android:textColor="#1A1A1A"
+                    style="@style/FormHintText" />
+            </LinearLayout>
+
+            <!-- Volunteers Needed -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Volunteers Needed"
+                    style="@style/FormLabelText"
+                    android:layout_marginBottom="10dp" />
+
+                <EditText
+                    android:id="@+id/volunteersEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:hint="Enter number"
+                    android:padding="14dp"
+                    android:inputType="number"
+                    android:background="@drawable/input_background_selector"
+                    android:textColor="#1A1A1A"
+                    style="@style/FormHintText" />
+            </LinearLayout>
+
+            <!-- Date and Time -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date And Time"
+                    style="@style/FormLabelText"
+                    android:layout_marginBottom="10dp" />
+
+                <EditText
+                    android:id="@+id/dateTimeEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:hint="Select date and time"
+                    android:padding="14dp"
+                    android:drawableStart="@drawable/baseline_event_24"
+                    android:drawablePadding="12dp"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:background="@drawable/input_background_selector"
+                    android:textColor="#1A1A1A"
+                    style="@style/FormHintText" />
+            </LinearLayout>
+
+            <!-- Required Skills Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="32dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Required Skills"
+                    style="@style/FormLabelText"
+                    android:layout_marginBottom="10dp" />
+
+                <EditText
+                    android:id="@+id/requiredSkillsEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:hint="List the skills needed (e.g., First Aid, Construction, Medical, etc.)"
+                    android:padding="14dp"
+                    android:inputType="textMultiLine"
+                    android:gravity="top"
+                    android:background="@drawable/input_background_selector"
+                    android:textColor="#1A1A1A"
+                    style="@style/FormHintText" />
+            </LinearLayout>
+
+            <!-- Submit Button -->
+            <Button
+                android:id="@+id/submitButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Create Emergency Request"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:background="@drawable/button_submit"
+                android:stateListAnimator="@null" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation Bar -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/nav_item_color"
+        app:itemTextColor="@color/nav_item_color"
+        app:labelVisibilityMode="labeled"
+        android:elevation="8dp" />
+
+</LinearLayout>

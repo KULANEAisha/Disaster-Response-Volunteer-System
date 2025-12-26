@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "298898756189",
+    "firebase_url": "https://project1-1d3db-default-rtdb.firebaseio.com",
+    "project_id": "project1-1d3db",
+    "storage_bucket": "project1-1d3db.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:298898756189:android:e37c998f7270b056e6f3b4",
+        "android_client_info": {
+          "package_name": "com.example.disasterapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0c4anzc3S9FxbecnN0_h86VeAE4XB0gI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:298898756189:android:c4929e1faafcdd7fe6f3b4",
+        "android_client_info": {
+          "package_name": "com.example.peekeventapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0c4anzc3S9FxbecnN0_h86VeAE4XB0gI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:298898756189:android:9cc93db8df3867bbe6f3b4",
+        "android_client_info": {
+          "package_name": "com.example.peekeventproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0c4anzc3S9FxbecnN0_h86VeAE4XB0gI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

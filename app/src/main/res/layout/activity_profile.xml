@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/main"
+    android:layout_height="match_parent"
+    android:background="#f3f4f6"
+    tools:context=".ProfileActivity">
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomNavigationView"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/header_background"
+                android:padding="24dp"
+                android:paddingBottom="32dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Emergency Response"
+                    style="@style/HeaderTitle" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Connecting Volunteers to those in need"
+                    style="@style/HeaderSubtitle"
+                    android:layout_marginTop="6dp" />
+            </LinearLayout>
+
+            <!-- Profile Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:cardBackgroundColor="#2563eb"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <!-- Profile Header -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <!-- Avatar -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            app:cardBackgroundColor="@android:color/white"
+                            app:cardCornerRadius="40dp"
+                            app:cardElevation="2dp">
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_person"
+                                app:tint="#2563eb" />
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Name and Status -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/profileNameTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Alex Martinez"
+                                android:textColor="@android:color/white"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                app:cardBackgroundColor="#22c55e"
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp">
+
+                                <TextView
+                                    android:id="@+id/profileStatusTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingStart="12dp"
+                                    android:paddingTop="4dp"
+                                    android:paddingEnd="12dp"
+                                    android:paddingBottom="4dp"
+                                    android:text="Available Now"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+                            </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Stats -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:orientation="horizontal">
+
+                        <!-- Missions -->
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/profileMissionsCard"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="12dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="#3b82f6"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="0dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <TextView
+                                    android:id="@+id/profileMissionsTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="23"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="32sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Missions"
+                                    android:textColor="#bfdbfe"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Updates -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="#3b82f6"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="0dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <TextView
+                                    android:id="@+id/profileUpdatesTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="12"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="32sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Updates"
+                                    android:textColor="#bfdbfe"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Availability Toggle Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="20dp"
+                    android:gravity="center_vertical">
+
+                    <!-- Icon -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        app:cardCornerRadius="24dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="#E0E7FF">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_check"
+                            app:tint="#4338ca"/>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Text Section -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Availability Status"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#1f2937"/>
+
+                        <TextView
+                            android:id="@+id/availabilityStatusText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Available for missions"
+                            android:textSize="14sp"
+                            android:textColor="#6b7280"
+                            android:layout_marginTop="4dp"/>
+                    </LinearLayout>
+
+                    <!-- Toggle Switch -->
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/availabilitySwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:thumbTint="@color/white"
+                        app:trackTint="@color/switch_track_color"/>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/matchedEmergenciesCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#FEF3C7">
+
+                <LinearLayout
+                    android:id="@+id/viewMatchedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="20dp"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+
+                    <!-- Icon Circle -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        app:cardCornerRadius="28dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="#F59E0B">
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="center"
+                            android:src="@android:drawable/ic_menu_view"
+                            app:tint="#FFFFFF"/>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Text Content -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Personalized Matches"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="#92400E"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="View emergencies matched to your skills"
+                            android:textSize="13sp"
+                            android:textColor="#78350F"/>
+                    </LinearLayout>
+
+                    <!-- Arrow Icon -->
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@android:drawable/ic_menu_more"
+                        app:tint="#92400E"
+                        android:rotation="270"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Skills Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_heart"
+                            app:tint="#ef4444" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="Skills"
+                            android:textColor="#1f2937"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/profileSkillsChipGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        app:chipSpacing="8dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/profileAddSkillsButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="+ Add Skills"
+                        android:textColor="#4338ca"
+                        app:backgroundTint="@android:color/transparent"
+                        app:strokeWidth="0dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Availability Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_calendar"
+                            app:tint="#4338ca" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="Availability"
+                            android:textColor="#1f2937"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/profileAvailabilityContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="vertical" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Service Area Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/location"
+                            app:tint="#ef4444" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="Service Area"
+                            android:textColor="#1f2937"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/profileServiceAreaTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Downtown District, East Zone"
+                        android:textColor="#6b7280"
+                        android:textSize="16sp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/profileUpdateLocationButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Update Location"
+                        android:textColor="#4338ca"
+                        app:backgroundTint="@android:color/transparent"
+                        app:strokeWidth="0dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation Bar (Fixed at bottom) -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:elevation="8dp"
+        app:itemIconTint="@color/nav_item_color"
+        app:itemTextColor="@color/nav_item_color"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
+
+</RelativeLayout>

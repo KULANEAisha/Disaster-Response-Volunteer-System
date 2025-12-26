@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_marginBottom="16dp"
+app:cardCornerRadius="12dp"
+app:cardElevation="2dp"
+app:cardBackgroundColor="#FFFFFF">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- User Info Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="12dp">
+
+        <!-- User Avatar -->
+        <!-- Profile Avatar with Image and Letter fallback -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:cardBackgroundColor="#2563eb"
+            app:cardCornerRadius="40dp"
+            app:cardElevation="4dp">
+
+            <!-- Profile Image (shown when user has uploaded a photo) -->
+            <ImageView
+                android:id="@+id/userProfileImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:visibility="gone" />
+
+            <!-- Letter Avatar (shown when no profile image exists) -->
+            <TextView
+                android:id="@+id/userAvatarTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="C"
+                android:textColor="#FFFFFF"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:background="@android:color/transparent"
+                android:visibility="visible" />
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- User Name -->
+        <TextView
+            android:id="@+id/userNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sarah Johnson"
+            android:textColor="#1A1A1A"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginStart="12dp" />
+    </LinearLayout>
+
+    <!-- Update Description -->
+    <TextView
+        android:id="@+id/updateDescriptionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Arrived at down shelter. Setting up a medical camp. 15 people treated so far."
+        android:textColor="#333333"
+        android:textSize="14sp"
+        android:lineSpacingExtra="4dp"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Update Image -->
+    <ImageView
+        android:id="@+id/updateImageView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:background="#E0E0E0"
+        android:contentDescription="Update image"
+        android:visibility="visible" />
+
+    <!-- Timestamp -->
+    <TextView
+        android:id="@+id/timestampTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2 hours ago"
+        android:textColor="#999999"
+        android:textSize="12sp"
+        android:layout_marginTop="8dp" />
+
+</LinearLayout>
+
+</androidx.cardview.widget.CardView>

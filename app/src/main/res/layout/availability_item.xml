@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:gravity="center_vertical"
+    android:background="@drawable/availability_item_background"
+    android:layout_marginBottom="8dp">
+
+    <TextView
+        android:id="@+id/availabilityText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Weekdays"
+        android:textColor="#374151"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/availabilityCheck"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_check"
+        android:visibility="visible"
+        app:tint="#10b981" />
+</LinearLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9FAFB">
+
+    <!-- Header -->
+    <LinearLayout
+        android:id="@+id/acceptedMissionsHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        android:background="#FFFFFF"
+        android:elevation="4dp">
+
+        <TextView
+            android:id="@+id/acceptedMissionsBackButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="← Back"
+            android:textSize="16sp"
+            android:textColor="#4338ca"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="8dp"
+            android:background="?attr/selectableItemBackground"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="My Accepted Missions"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#111827"
+            android:gravity="center"/>
+
+        <View
+            android:layout_width="80dp"
+            android:layout_height="0dp"/>
+
+    </LinearLayout>
+
+    <!-- Content -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/acceptedMissionsHeader">
+
+        <!-- Progress Bar -->
+        <ProgressBar
+            android:id="@+id/acceptedMissionsProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminateTint="#4338ca"
+            android:visibility="gone"/>
+
+        <!-- Empty State -->
+        <LinearLayout
+            android:id="@+id/acceptedMissionsEmptyState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_emergency"
+                android:alpha="0.3"
+                app:tint="#9CA3AF"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="No accepted missions yet"
+                android:textSize="18sp"
+                android:textColor="#6B7280"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Start accepting missions from the alerts page"
+                android:textSize="14sp"
+                android:textColor="#9CA3AF"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <!-- RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/acceptedMissionsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:clipToPadding="false"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
